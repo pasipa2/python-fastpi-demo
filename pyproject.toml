@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "tdd-flask-docker"
+name = "fastapi"
 version = "0.1.0"
 description = "Flask TDD Docker"
 authors = ["DNyambudzi"]
