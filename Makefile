@@ -1,7 +1,7 @@
 build:
 	docker-compose build
 
-start: build
+start:
 	docker-compose up -d
 
 check:
