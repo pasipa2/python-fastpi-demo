@@ -1,7 +1,6 @@
 format_version: 10
 pipelines:
   PingApp:
-    group: FastAPI
     label_template: ${COUNT}
     lock_behavior: none
     display_order: -1
