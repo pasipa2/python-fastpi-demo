@@ -12,3 +12,4 @@ def test_ping(test_app):
     assert data["ping"]
     assert data["testing"]
     assert data["instance_id"]
+    assert data["requests"]
