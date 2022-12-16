@@ -5,7 +5,7 @@ start:
 	docker-compose up -d
 
 check:
-	curl http://localhost:8004/ping | json_pp
+	sh test.sh
 
 test:
 	docker-compose exec web python -m pytest -v

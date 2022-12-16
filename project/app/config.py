@@ -2,6 +2,7 @@
 
 
 import logging
+import socket
 from functools import lru_cache
 from uuid import uuid4
 from pydantic import BaseSettings, AnyUrl
@@ -14,6 +15,7 @@ class Settings(BaseSettings):
     id: str = str(uuid4())
     testing: bool = 0
     database_url: AnyUrl = None
+    hostname: str = socket.gethostname()
 
 
 @lru_cache()

@@ -1,6 +1,6 @@
 # project/app/main.py
 
-import logging
+import sys
 
 from fastapi import FastAPI, Depends
 
@@ -9,7 +9,7 @@ from app.config import get_settings, Settings
 
 app = FastAPI()
 
-requests_received = 0
+requests_received = int(0)
 
 def requester_counter():
     global requests_received
@@ -19,10 +19,13 @@ def requester_counter():
 
 @app.get("/ping")
 async def pong(settings: Settings = Depends(get_settings)):
-    return {
+    payload = {
         "ping": "pong!",
         "environment": settings.environment,
         "testing": settings.testing,
         "instance_id": settings.id,
-        "requests": requester_counter()
+        "requests": requester_counter(),
+        "server": settings.hostname
     }
+
+    return payload
